@@ -9,10 +9,6 @@
 import Foundation
 import CoreData
 
-/* 
-   in questo caso essendoci una relazione "uno ad uno" la proprietà user(IN QUESTO CASO)
-   contiene un istanza NSManagedObject User associato a role
- */
 
 extension Role {
 
@@ -20,10 +16,11 @@ extension Role {
         return NSFetchRequest<Role>(entityName: "Role")
     }
 
-    @NSManaged public var idRole: Int32
     @NSManaged public var genre: String?
+    @NSManaged public var idRole: Int32
     @NSManaged public var instrumentalRole: String?
-    @NSManaged public var user: User?
     @NSManaged public var playInBand: PlayBand?
+    @NSManaged public var user: User?
+   
 
 }

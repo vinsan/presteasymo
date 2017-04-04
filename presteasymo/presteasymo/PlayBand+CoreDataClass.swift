@@ -11,7 +11,7 @@ import CoreData
 
 
 public class PlayBand: NSManagedObject {
-    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+    override public init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }
 }

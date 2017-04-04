@@ -16,11 +16,11 @@ extension PlayBand {
         return NSFetchRequest<PlayBand>(entityName: "PlayBand")
     }
 
-    @NSManaged public var leaderMember: Bool
     @NSManaged public var idComponent: Int32
-    @NSManaged public var user: User?
+    @NSManaged public var leaderMember: Bool
     @NSManaged public var band: Band?
     @NSManaged public var roleInTheBand: NSSet?
+    @NSManaged public var user: User?
     
     func addroleInTheBand(value: Role){
         let items = self.mutableSetValue(forKey: "roleInTheBand")
@@ -30,9 +30,8 @@ extension PlayBand {
         let items = self.mutableSetValue(forKey: "roleInTheBand")
         items.remove(value)
     }
+
 }
-
-
 /*
 // MARK: Generated accessors for roleInTheBand
 extension PlayBand {
@@ -50,4 +49,4 @@ extension PlayBand {
     @NSManaged public func removeFromRoleInTheBand(_ values: NSSet)
 
 }
-*/
+ */

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B7F5161E9402E40026CEE2 /* Role+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F50C1E9402E40026CEE2 /* Role+CoreDataClass.swift */; };
+		28B7F5171E9402E40026CEE2 /* Role+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F50D1E9402E40026CEE2 /* Role+CoreDataProperties.swift */; };
+		28B7F5181E9402E40026CEE2 /* PlayBand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F50E1E9402E40026CEE2 /* PlayBand+CoreDataClass.swift */; };
+		28B7F5191E9402E40026CEE2 /* PlayBand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F50F1E9402E40026CEE2 /* PlayBand+CoreDataProperties.swift */; };
+		28B7F51A1E9402E40026CEE2 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5101E9402E40026CEE2 /* User+CoreDataClass.swift */; };
+		28B7F51B1E9402E40026CEE2 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5111E9402E40026CEE2 /* User+CoreDataProperties.swift */; };
+		28B7F51C1E9402E40026CEE2 /* Band+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5121E9402E40026CEE2 /* Band+CoreDataClass.swift */; };
+		28B7F51D1E9402E40026CEE2 /* Band+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5131E9402E40026CEE2 /* Band+CoreDataProperties.swift */; };
+		28B7F51E1E9402E40026CEE2 /* Evalutation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5141E9402E40026CEE2 /* Evalutation+CoreDataClass.swift */; };
+		28B7F51F1E9402E40026CEE2 /* Evalutation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5151E9402E40026CEE2 /* Evalutation+CoreDataProperties.swift */; };
+		28B7F5211E94030F0026CEE2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7F5201E94030F0026CEE2 /* CoreDataController.swift */; };
 		A3D780AA1E924910009B24C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D780A91E924910009B24C5 /* AppDelegate.swift */; };
 		A3D780AC1E924910009B24C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D780AB1E924910009B24C5 /* ViewController.swift */; };
 		A3D780AF1E924910009B24C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D780AD1E924910009B24C5 /* Main.storyboard */; };
@@ -35,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28B7F50C1E9402E40026CEE2 /* Role+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Role+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28B7F50D1E9402E40026CEE2 /* Role+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Role+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28B7F50E1E9402E40026CEE2 /* PlayBand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayBand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28B7F50F1E9402E40026CEE2 /* PlayBand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayBand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28B7F5101E9402E40026CEE2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28B7F5111E9402E40026CEE2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28B7F5121E9402E40026CEE2 /* Band+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Band+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28B7F5131E9402E40026CEE2 /* Band+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Band+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28B7F5141E9402E40026CEE2 /* Evalutation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Evalutation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		28B7F5151E9402E40026CEE2 /* Evalutation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Evalutation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		28B7F5201E94030F0026CEE2 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		A3D780A61E924910009B24C5 /* presteasymo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = presteasymo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D780A91E924910009B24C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D780AB1E924910009B24C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +121,17 @@
 		A3D780A81E924910009B24C5 /* presteasymo */ = {
 			isa = PBXGroup;
 			children = (
+				28B7F50C1E9402E40026CEE2 /* Role+CoreDataClass.swift */,
+				28B7F5201E94030F0026CEE2 /* CoreDataController.swift */,
+				28B7F50D1E9402E40026CEE2 /* Role+CoreDataProperties.swift */,
+				28B7F50E1E9402E40026CEE2 /* PlayBand+CoreDataClass.swift */,
+				28B7F50F1E9402E40026CEE2 /* PlayBand+CoreDataProperties.swift */,
+				28B7F5101E9402E40026CEE2 /* User+CoreDataClass.swift */,
+				28B7F5111E9402E40026CEE2 /* User+CoreDataProperties.swift */,
+				28B7F5121E9402E40026CEE2 /* Band+CoreDataClass.swift */,
+				28B7F5131E9402E40026CEE2 /* Band+CoreDataProperties.swift */,
+				28B7F5141E9402E40026CEE2 /* Evalutation+CoreDataClass.swift */,
+				28B7F5151E9402E40026CEE2 /* Evalutation+CoreDataProperties.swift */,
 				A3D780A91E924910009B24C5 /* AppDelegate.swift */,
 				A3D780AB1E924910009B24C5 /* ViewController.swift */,
 				A3D780AD1E924910009B24C5 /* Main.storyboard */,
@@ -262,9 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28B7F51C1E9402E40026CEE2 /* Band+CoreDataClass.swift in Sources */,
+				28B7F5191E9402E40026CEE2 /* PlayBand+CoreDataProperties.swift in Sources */,
+				28B7F51E1E9402E40026CEE2 /* Evalutation+CoreDataClass.swift in Sources */,
 				A3D780B21E924910009B24C5 /* presteasymo.xcdatamodeld in Sources */,
+				28B7F5171E9402E40026CEE2 /* Role+CoreDataProperties.swift in Sources */,
+				28B7F51F1E9402E40026CEE2 /* Evalutation+CoreDataProperties.swift in Sources */,
+				28B7F5161E9402E40026CEE2 /* Role+CoreDataClass.swift in Sources */,
 				A3D780AC1E924910009B24C5 /* ViewController.swift in Sources */,
+				28B7F5181E9402E40026CEE2 /* PlayBand+CoreDataClass.swift in Sources */,
+				28B7F51A1E9402E40026CEE2 /* User+CoreDataClass.swift in Sources */,
+				28B7F5211E94030F0026CEE2 /* CoreDataController.swift in Sources */,
 				A3D780AA1E924910009B24C5 /* AppDelegate.swift in Sources */,
+				28B7F51B1E9402E40026CEE2 /* User+CoreDataProperties.swift in Sources */,
+				28B7F51D1E9402E40026CEE2 /* Band+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +555,7 @@
 				A3D780D31E924910009B24C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3D780D41E924910009B24C5 /* Build configuration list for PBXNativeTarget "presteasymoTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +564,7 @@
 				A3D780D61E924910009B24C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3D780D71E924910009B24C5 /* Build configuration list for PBXNativeTarget "presteasymoUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +573,7 @@
 				A3D780D91E924910009B24C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

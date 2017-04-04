@@ -10,10 +10,9 @@ import Foundation
 import CoreData
 
 /*
-   in questa classe abbiamo una relazione "uno a molti" sono rappresentate 
-   tramite array o NSSet, dove NSSet è l'equivalente di let array: [AnyObject]
-   Questo array contiene oggetti di NSManagedObject
- 
+ in questa classe abbiamo una relazione "uno a molti" che sono rappresentate
+ tramite array o NSSet, dove NSSet è l'equivalente di let array: [AnyObject]
+ Questo array contiene oggetti di NSManagedObject
  */
 extension Band {
 
@@ -22,10 +21,10 @@ extension Band {
     }
 
     @NSManaged public var areaCity: String?
+    @NSManaged public var bandPhoto: String?
     @NSManaged public var genre: String?
     @NSManaged public var idBand: String?
     @NSManaged public var name: String?
-    @NSManaged public var bandPhoto: String?
     @NSManaged public var playAsBand: NSSet?
     
     func addPlayBand(value: PlayBand){
@@ -36,9 +35,8 @@ extension Band {
         let items = self.mutableSetValue(forKey: "playAsBand")
         items.remove(value)
     }
+
 }
-
-
 /*
 // MARK: Generated accessors for playAsBand
 extension Band {
@@ -54,5 +52,6 @@ extension Band {
 
     @objc(removePlayAsBand:)
     @NSManaged public func removeFromPlayAsBand(_ values: NSSet)
+
 }
-*/
+ */

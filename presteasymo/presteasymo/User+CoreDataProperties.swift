@@ -9,26 +9,28 @@
 import Foundation
 import CoreData
 
+
 extension User {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<User> {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var surname: String?
-    @NSManaged public var name: String?
-    @NSManaged public var idUser: Int32
     @NSManaged public var cityArea: String?
+    @NSManaged public var idUser: Int32
+    @NSManaged public var name: String?
+    @NSManaged public var surname: String?
     @NSManaged public var userPhoto: String?
-    @NSManaged public var valutationUser: NSSet?
-    @NSManaged public var roleUser: NSSet?
     @NSManaged public var playerBand: NSSet?
+    @NSManaged public var roleUser: NSSet?
+    @NSManaged public var valutationUser: NSSet?
+    
     
     //aggiunge una valutazione nell'array delle valutazioni
     func addEvalutation(value: Evalutation){
         /*qui utilizziamo un metodo di NSManagedObject per rendere NSSet mutabile in quanto NSSet non è mutabile
-           come parametro gli passiamo il nome del NSSet da utilizzare
-        */
+         come parametro gli passiamo il nome del NSSet da utilizzare
+         */
         let items = self.mutableSetValue(forKey: "valutationUser")
         //qui aggiungiamo il metodo
         items.add(value)
@@ -58,25 +60,23 @@ extension User {
         let items = self.mutableSetValue(forKey: "playerBand")
         items.remove(value)
     }
-    
+
 }
-
-
 /*
-// MARK: Generated accessors for valutationUser
+// MARK: Generated accessors for playerBand
 extension User {
 
-    @objc(addValutationUserObject:)
-    @NSManaged public func addToValutationUser(_ value: Evalutation)
+    @objc(addPlayerBandObject:)
+    @NSManaged public func addToPlayerBand(_ value: PlayBand)
 
-    @objc(removeValutationUserObject:)
-    @NSManaged public func removeFromValutationUser(_ value: Evalutation)
+    @objc(removePlayerBandObject:)
+    @NSManaged public func removeFromPlayerBand(_ value: PlayBand)
 
-    @objc(addValutationUser:)
-    @NSManaged public func addToValutationUser(_ values: NSSet)
+    @objc(addPlayerBand:)
+    @NSManaged public func addToPlayerBand(_ values: NSSet)
 
-    @objc(removeValutationUser:)
-    @NSManaged public func removeFromValutationUser(_ values: NSSet)
+    @objc(removePlayerBand:)
+    @NSManaged public func removeFromPlayerBand(_ values: NSSet)
 
 }
 
@@ -97,20 +97,20 @@ extension User {
 
 }
 
-// MARK: Generated accessors for playerBand
+// MARK: Generated accessors for valutationUser
 extension User {
 
-    @objc(addPlayerBandObject:)
-    @NSManaged public func addToPlayerBand(_ value: PlayBand)
+    @objc(addValutationUserObject:)
+    @NSManaged public func addToValutationUser(_ value: Evalutation)
 
-    @objc(removePlayerBandObject:)
-    @NSManaged public func removeFromPlayerBand(_ value: PlayBand)
+    @objc(removeValutationUserObject:)
+    @NSManaged public func removeFromValutationUser(_ value: Evalutation)
 
-    @objc(addPlayerBand:)
-    @NSManaged public func addToPlayerBand(_ values: NSSet)
+    @objc(addValutationUser:)
+    @NSManaged public func addToValutationUser(_ values: NSSet)
 
-    @objc(removePlayerBand:)
-    @NSManaged public func removeFromPlayerBand(_ values: NSSet)
- 
+    @objc(removeValutationUser:)
+    @NSManaged public func removeFromValutationUser(_ values: NSSet)
+
 }
-*/
+ */

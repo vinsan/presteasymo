@@ -16,9 +16,9 @@ extension Evalutation {
         return NSFetchRequest<Evalutation>(entityName: "Evalutation")
     }
 
-    @NSManaged public var reliability: Int32
     @NSManaged public var idValutation: Int32
     @NSManaged public var instrumentalSkills: Int32
+    @NSManaged public var reliability: Int32
     @NSManaged public var userValutation: User?
 
 }
