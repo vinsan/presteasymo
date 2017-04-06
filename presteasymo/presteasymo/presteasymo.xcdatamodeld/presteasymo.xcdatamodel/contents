@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12140" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Band" representedClassName=".Band" syncable="YES">
-        <attribute name="areaCity" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="bandPhoto" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="idBand" optional="YES" attributeType="String" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Ability" representedClassName="Ability" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="playAsBand" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayBand" inverseName="band" inverseEntity="PlayBand" syncable="YES"/>
     </entity>
-    <entity name="Evalutation" representedClassName=".Evalutation" syncable="YES">
-        <attribute name="idValutation" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="instrumentalSkills" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="reliability" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="userValutation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="valutationUser" inverseEntity="User" syncable="YES"/>
+    <entity name="Band" representedClassName="Band" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="genre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genre" syncable="YES"/>
     </entity>
-    <entity name="PlayBand" representedClassName=".PlayBand" syncable="YES">
-        <attribute name="idComponent" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="leaderMember" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="band" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Band" inverseName="playAsBand" inverseEntity="Band" syncable="YES"/>
-        <relationship name="roleInTheBand" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Role" inverseName="playInBand" inverseEntity="Role" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="playerBand" inverseEntity="User" syncable="YES"/>
+    <entity name="Evalutation" representedClassName="Evalutation" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Role" representedClassName=".Role" syncable="YES">
-        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="idRole" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="instrumentalRole" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="playInBand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayBand" inverseName="roleInTheBand" inverseEntity="PlayBand" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="roleUser" inverseEntity="User" syncable="YES"/>
+    <entity name="Feedback" representedClassName="Feedback" syncable="YES" codeGenerationType="class">
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" syncable="YES"/>
+        <relationship name="eval" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evalutation" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName=".User" syncable="YES">
-        <attribute name="cityArea" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="idUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="Genre" representedClassName="Genre" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Member" representedClassName="Member" syncable="YES" codeGenerationType="class">
+        <attribute name="leader" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="band" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Band" syncable="YES"/>
+        <relationship name="role" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Role" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Role" representedClassName="Role" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="education" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userPhoto" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="playerBand" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayBand" inverseName="user" inverseEntity="PlayBand" syncable="YES"/>
-        <relationship name="roleUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Role" inverseName="user" inverseEntity="Role" syncable="YES"/>
-        <relationship name="valutationUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evalutation" inverseName="userValutation" inverseEntity="Evalutation" syncable="YES"/>
+        <attribute name="youtube" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" syncable="YES"/>
+        <relationship name="u_g" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genre" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-495" positionY="-361" width="128" height="163"/>
-        <element name="Evalutation" positionX="-693" positionY="-301" width="128" height="103"/>
-        <element name="Band" positionX="-549" positionY="-72" width="128" height="133"/>
-        <element name="Role" positionX="-243" positionY="-397" width="128" height="118"/>
-        <element name="PlayBand" positionX="18" positionY="-135" width="128" height="118"/>
+        <element name="Genre" positionX="-6561" positionY="-5940" width="128" height="73"/>
+        <element name="Band" positionX="-6428" positionY="-5724" width="128" height="103"/>
+        <element name="User" positionX="-6192" positionY="-5956" width="128" height="178"/>
+        <element name="Member" positionX="-6185" positionY="-5697" width="128" height="103"/>
+        <element name="Role" positionX="-6176" positionY="-5553" width="128" height="73"/>
+        <element name="Evalutation" positionX="-6417" positionY="-6084" width="128" height="73"/>
+        <element name="Feedback" positionX="-6194" positionY="-6084" width="128" height="88"/>
+        <element name="Ability" positionX="-5976" positionY="-6064" width="128" height="73"/>
     </elements>
 </model>
