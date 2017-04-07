@@ -1,5 +1,5 @@
 //
-//  User+CoreDataClass.swift
+//  Genre+CoreDataClass.swift
 //  presteasymo
 //
 //  Created by Fabio Mazzotta on 06/04/17.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class User: NSManagedObject {
+public class Genre: NSManagedObject {
     override public init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }

@@ -13,10 +13,97 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let gestCanc = GestoreCoreDataCancellazione()
+    let gestPrel = GestoreCoreDataPrelievo()
+    let gest1 = CoreDataController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let tabBarController = self.window!.rootViewController as? UITabBarController {
+            tabBarController.selectedIndex = 1
+        }
+        
+        print("inseriamo una band ed un utente")
+        
+        //creaUser(name: String, surname: String, city: String, email: String, password:String)
+        
+        gest1.creaUser(name: "Marco", surname: "Rossi", city: "Avellino", email: "", password: "asd")
+        gest1.creaUser(name: "Luca", surname: "Verdi", city: "Roma", email: "asd", password: "asd")
+        gest1.creaUser(name: "Roberto", surname: "Neri", city: "Salerno", email: "asd", password: "asd")
+        gest1.creaUser(name: "Matteo", surname: "Treo", city: "Sava", email: "asd", password: "asd")
+        
+        gest1.creaBand(name: "Pink floyd", areaCity: "roma", contactNumber: "789", youtubeChannel: "dfd", bandPhoto: "rerer", id: "pink")
+        print("fatto ora li preleviamo")
+        let ba=gestPrel.getBand()
+        let ut=gestPrel.getUser()
+        
+        print("ora inseriamo un genere, feedback, abilità e membro ad utente ad una band")
+
+        let user = ut[1]
+        let band = ba[1]
+        
+        if(!(user==nil)){
+            print("fatto 1")
+            let ab=gest1.creaAbility(name: "Guitar")
+            print("fatto 2")
+            let role=gest1.creaRole(id: "Erer", name: "pianista")
+            print("fatto 3")
+            let fee=gest1.creaFeedBack(voto: 45, utente: user, ability: ab)
+            print("fatto4")
+            let genre=gest1.creaMusicalGeneral(name: "Rock", id: "erer", utente: user, band: band)
+            print("fatto 5")
+            let membro=gest1.creaBandMember(leader: false, user: user, band: band, ruolo: role)
+            user.addAbility(value: ab)
+            user.addGenere(value: genre)
+            user.addMembro(value: membro)
+            user.addValutazione(value: fee)
+        }
+        if(!(band==nil)){
+            print("fatto 34")
+            let ruolo3=gest1.creaRole(id: "trt", name: "Guitar")
+            print("fatto 35")
+            let membro1=gest1.creaBandMember(leader: true, user: user, band: band, ruolo: ruolo3)
+            print("fatto 36")
+            let genre3=gest1.creaMusicalGeneral(name: "jazz", id: "tyty", utente: user, band: band)
+            print("fatto 37")
+            band.addGenereBand(value: genre3)
+            band.addMembroBand(value: membro1)
+        }
+        print("ora visualizziamo i contenuti inseriti nell'utente e nella band")
+        let feeds=gestPrel.getFeedBackUser(user: user)
+        let abs=gestPrel.getAbilityUser(user: user)
+        let userMe=gestPrel.getBandMembroUser(user: user)
+        let gens=gestPrel.getGenereUser(user: user)
+        
+        let genBand=gestPrel.getGenereBand(user: band)
+        let membro=gestPrel.getMembroBand(user: band)
+        
+        for f1 in feeds{
+            print("FeedBack " ,f1.evalutation , f1.user!.name! + f1.ability!.name!)
+        }
+        
+        for f2 in abs{
+            print("ability " + f2.name! + f2.user!.name!)
+        }
+        
+        for f3 in userMe{
+            print("UserMember " + f3.user!.name! + f3.role!.name!)
+        }
+        
+        for f4 in gens{
+            print("Genere " + f4.name! + f4.userGenre!.name! + f4.bandGenre!.name!)
+        }
+        
+        for f5 in genBand{
+            print("GenereBand " ,f5.name! + f5.bandGenre!.name!)
+        }
+        
+        for f6 in membro{
+            print("MembroBand" + f6.user!.name! + f6.role!.name!)
+        }
+        
+        
+        
         return true
     }
 

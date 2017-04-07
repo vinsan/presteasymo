@@ -2,7 +2,7 @@
 //  Role+CoreDataProperties.swift
 //  presteasymo
 //
-//  Created by Fabio Mazzotta on 04/04/17.
+//  Created by Fabio Mazzotta on 06/04/17.
 //  Copyright © 2017 Team 2.4. All rights reserved.
 //
 
@@ -16,11 +16,8 @@ extension Role {
         return NSFetchRequest<Role>(entityName: "Role")
     }
 
-    @NSManaged public var genre: String?
-    @NSManaged public var idRole: Int32
-    @NSManaged public var instrumentalRole: String?
-    @NSManaged public var playInBand: PlayBand?
-    @NSManaged public var user: User?
-   
+    @NSManaged public var idRole: String?
+    @NSManaged public var name: String?
+    @NSManaged public var roleBandMember: Member?
 
 }
